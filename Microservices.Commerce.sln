@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Clients", "01. Clients", "{EAE6831E-32E6-4555-8421-0D8910F74BE7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Api.Gateways", "02. Api.Gateways", "{9F13F714-C667-46CA-BA08-F0AAC8A1D2AC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Gateways", "02. Gateways", "{9F13F714-C667-46CA-BA08-F0AAC8A1D2AC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Services", "03. Services", "{99145D4F-AFE4-4651-B039-28632F476A57}"
 EndProject
@@ -65,15 +65,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Models", "04. Models", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Testing", "05. Testing", "{42AD3AB1-3E06-42C7-8E6F-8B202CAC6025}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Api", "src\Services\Customer\Customer.Api\Customer.Api.csproj", "{64258154-31BD-4A56-8C83-3D5326892687}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Api", "src\Services\Customer\Customer.Api\Customer.Api.csproj", "{64258154-31BD-4A56-8C83-3D5326892687}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Service.EventHandlers", "src\Services\Customer\Customer.Service.EventHandlers\Customer.Service.EventHandlers.csproj", "{C3BB8DEB-38C7-4A6C-9F79-8FC862814001}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Service.EventHandlers", "src\Services\Customer\Customer.Service.EventHandlers\Customer.Service.EventHandlers.csproj", "{C3BB8DEB-38C7-4A6C-9F79-8FC862814001}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Service.Queries", "src\Services\Customer\Customer.Service.Queries\Customer.Service.Queries.csproj", "{3782C1E5-3D5B-436F-8839-D1EDA678F932}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Service.Queries", "src\Services\Customer\Customer.Service.Queries\Customer.Service.Queries.csproj", "{3782C1E5-3D5B-436F-8839-D1EDA678F932}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Domain", "src\Services\Customer\Customer.Domain\Customer.Domain.csproj", "{55369EC9-5715-4824-896D-5F3368A02AB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Domain", "src\Services\Customer\Customer.Domain\Customer.Domain.csproj", "{55369EC9-5715-4824-896D-5F3368A02AB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Persistence.Database", "src\Services\Customer\Customer.Persistence.Database\Customer.Persistence.Database.csproj", "{2AA655B7-21D1-4882-93A5-6974DAEC4723}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Persistence.Database", "src\Services\Customer\Customer.Persistence.Database\Customer.Persistence.Database.csproj", "{2AA655B7-21D1-4882-93A5-6974DAEC4723}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. API", "01. API", "{75E290CF-62B5-4918-83CB-667C14FB2C40}"
 EndProject
@@ -87,23 +87,43 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Common", "05. Common", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06. Testing", "06. Testing", "{BE149FA1-B4E4-4A84-A889-35599DDC4E0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Api", "src\Services\Order\Order.Api\Order.Api.csproj", "{2E542E71-366B-46A9-9995-3190AAF30777}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Api", "src\Services\Order\Order.Api\Order.Api.csproj", "{2E542E71-366B-46A9-9995-3190AAF30777}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Service.EventHandlers", "src\Services\Order\Order.Service.EventHandlers\Order.Service.EventHandlers.csproj", "{465A0B32-7FF4-4BD3-B6D9-C02A853C3CBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Service.EventHandlers", "src\Services\Order\Order.Service.EventHandlers\Order.Service.EventHandlers.csproj", "{465A0B32-7FF4-4BD3-B6D9-C02A853C3CBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Service.Queries", "src\Services\Order\Order.Service.Queries\Order.Service.Queries.csproj", "{331D1498-5D33-421B-9EE9-32B69D5BBB59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Service.Queries", "src\Services\Order\Order.Service.Queries\Order.Service.Queries.csproj", "{331D1498-5D33-421B-9EE9-32B69D5BBB59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Persistence.Database", "src\Services\Order\Order.Persistence.Database\Order.Persistence.Database.csproj", "{34C9B594-259B-4B1D-8CD4-A7A3CE9B586D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Persistence.Database", "src\Services\Order\Order.Persistence.Database\Order.Persistence.Database.csproj", "{34C9B594-259B-4B1D-8CD4-A7A3CE9B586D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Domain", "src\Services\Order\Order.Domain\Order.Domain.csproj", "{18DB56C3-745A-47C5-9A35-209A138BBD11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Domain", "src\Services\Order\Order.Domain\Order.Domain.csproj", "{18DB56C3-745A-47C5-9A35-209A138BBD11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Common", "src\Services\Order\Order.Common\Order.Common.csproj", "{68E4823D-6C05-4B07-B73B-2F0EB9BD00FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Common", "src\Services\Order\Order.Common\Order.Common.csproj", "{68E4823D-6C05-4B07-B73B-2F0EB9BD00FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Service.Proxies", "src\Services\Order\Order.Service.Proxies\Order.Service.Proxies.csproj", "{FD2E7F2D-C970-4AF1-AB7F-0E2B62E83511}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Service.Proxies", "src\Services\Order\Order.Service.Proxies\Order.Service.Proxies.csproj", "{FD2E7F2D-C970-4AF1-AB7F-0E2B62E83511}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07. Listeners", "07. Listeners", "{EF78988B-F85C-4408-A426-4EA3955B4925}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Listener", "src\Services\Catalog\Catalog.Listener\Catalog.Listener.csproj", "{8A197AF0-46C2-49CC-B002-F5749C2B2398}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Listener", "src\Services\Catalog\Catalog.Listener\Catalog.Listener.csproj", "{8A197AF0-46C2-49CC-B002-F5749C2B2398}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. API", "01. API", "{6999511A-103E-45D6-A4C9-4F0C1E3C51B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Services", "02. Services", "{41D4CD6F-9CC5-4392-8A9D-D796D182B17E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Persistence", "03. Persistence", "{72D21866-ECDC-49AA-84B0-E162AA7D0E0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Models", "04. Models", "{6C944445-025F-47F1-AE2D-C50A9E5BD024}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Testing", "05. Testing", "{21000E3A-E533-4B9D-BB72-966E7E9CCE4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Domain", "src\Services\Identity\Identity.Domain\Identity.Domain.csproj", "{572887EC-C5C5-46DE-B81F-0D91932DE999}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Persistence.Database", "src\Services\Identity\Identity.Persistence.Database\Identity.Persistence.Database.csproj", "{07536CE5-5FD1-40C4-A484-66FA1F880541}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Api", "src\Services\Identity\Identity.Api\Identity.Api.csproj", "{13498172-6950-44F0-AD8F-935E27C533B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Service.EventHandlers", "src\Services\Identity\Identity.Service.EventHandlers\Identity.Service.EventHandlers.csproj", "{BBE775E3-E127-499B-8999-1DFAC9189216}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Service.Queries", "src\Services\Identity\Identity.Service.Queries\Identity.Service.Queries.csproj", "{BE42F079-8CE7-4563-8DBE-2712B341490A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -207,6 +227,26 @@ Global
 		{8A197AF0-46C2-49CC-B002-F5749C2B2398}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A197AF0-46C2-49CC-B002-F5749C2B2398}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A197AF0-46C2-49CC-B002-F5749C2B2398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{572887EC-C5C5-46DE-B81F-0D91932DE999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{572887EC-C5C5-46DE-B81F-0D91932DE999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{572887EC-C5C5-46DE-B81F-0D91932DE999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{572887EC-C5C5-46DE-B81F-0D91932DE999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07536CE5-5FD1-40C4-A484-66FA1F880541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07536CE5-5FD1-40C4-A484-66FA1F880541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07536CE5-5FD1-40C4-A484-66FA1F880541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07536CE5-5FD1-40C4-A484-66FA1F880541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13498172-6950-44F0-AD8F-935E27C533B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13498172-6950-44F0-AD8F-935E27C533B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13498172-6950-44F0-AD8F-935E27C533B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13498172-6950-44F0-AD8F-935E27C533B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBE775E3-E127-499B-8999-1DFAC9189216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBE775E3-E127-499B-8999-1DFAC9189216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBE775E3-E127-499B-8999-1DFAC9189216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBE775E3-E127-499B-8999-1DFAC9189216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE42F079-8CE7-4563-8DBE-2712B341490A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE42F079-8CE7-4563-8DBE-2712B341490A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE42F079-8CE7-4563-8DBE-2712B341490A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE42F079-8CE7-4563-8DBE-2712B341490A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -259,6 +299,16 @@ Global
 		{FD2E7F2D-C970-4AF1-AB7F-0E2B62E83511} = {3E5396A5-BA1E-4AE5-87E2-C149AD19DDE0}
 		{EF78988B-F85C-4408-A426-4EA3955B4925} = {D212466A-3376-481C-BEC7-6CD30FD1CFAE}
 		{8A197AF0-46C2-49CC-B002-F5749C2B2398} = {EF78988B-F85C-4408-A426-4EA3955B4925}
+		{6999511A-103E-45D6-A4C9-4F0C1E3C51B9} = {81A1282F-37EB-4394-8A5C-3B1252DCA44C}
+		{41D4CD6F-9CC5-4392-8A9D-D796D182B17E} = {81A1282F-37EB-4394-8A5C-3B1252DCA44C}
+		{72D21866-ECDC-49AA-84B0-E162AA7D0E0E} = {81A1282F-37EB-4394-8A5C-3B1252DCA44C}
+		{6C944445-025F-47F1-AE2D-C50A9E5BD024} = {81A1282F-37EB-4394-8A5C-3B1252DCA44C}
+		{21000E3A-E533-4B9D-BB72-966E7E9CCE4B} = {81A1282F-37EB-4394-8A5C-3B1252DCA44C}
+		{572887EC-C5C5-46DE-B81F-0D91932DE999} = {6C944445-025F-47F1-AE2D-C50A9E5BD024}
+		{07536CE5-5FD1-40C4-A484-66FA1F880541} = {72D21866-ECDC-49AA-84B0-E162AA7D0E0E}
+		{13498172-6950-44F0-AD8F-935E27C533B5} = {6999511A-103E-45D6-A4C9-4F0C1E3C51B9}
+		{BBE775E3-E127-499B-8999-1DFAC9189216} = {41D4CD6F-9CC5-4392-8A9D-D796D182B17E}
+		{BE42F079-8CE7-4563-8DBE-2712B341490A} = {41D4CD6F-9CC5-4392-8A9D-D796D182B17E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A576E1E0-1B32-4B28-9AAC-12E650130222}
