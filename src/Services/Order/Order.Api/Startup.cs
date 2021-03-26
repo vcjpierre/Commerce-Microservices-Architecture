@@ -1,6 +1,7 @@
 using Common.Logging;
 using HealthChecks.UI.Client;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Order.Persistence.Database;
 using Order.Service.Proxies;
 using Order.Service.Proxies.Catalog;
@@ -52,14 +54,8 @@ namespace Order.Api
             // ApiUrls
             services.Configure<ApiUrls>(opts => Configuration.GetSection("ApiUrls").Bind(opts));
 
-            // Azure Service Bus ConnectionString
-            //services.Configure<AzureServiceBus>(
-            //    opts => Configuration.GetSection("AzureServiceBus").Bind(opts)
-            //);
-
             // Proxies
-            services.AddHttpClient<ICatalogProxy, CatalogHttpProxy>();
-            // services.AddTransient<ICatalogProxy, CatalogQueueProxy>();
+            services.AddHttpClient<ICatalogProxy, CatalogProxy>();
 
             // Event handlers
             services.AddMediatR(Assembly.Load("Order.Service.EventHandlers"));
@@ -68,7 +64,25 @@ namespace Order.Api
             services.AddTransient<IOrderQueryService, OrderQueryService>();
 
             // API Controllers
-            services.AddControllers();            
+            services.AddControllers();
+
+            // Add Authentication
+            var secretKey = Encoding.ASCII.GetBytes(
+                Configuration.GetValue<string>("SecretKey")
+            );
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(secretKey),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

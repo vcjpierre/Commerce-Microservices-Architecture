@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Order.Api.Controllers
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     [Route("v1/orders")]
     public class OrderController : ControllerBase
@@ -29,7 +31,7 @@ namespace Order.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<DataCollection<OrderDto>> GetAll(int page = 1, int take = 10)
+        public async Task<DataCollection<OrderDto>> GetAll(int page = 1, int take = 10) 
         {
             return await _orderQueryService.GetAllAsync(page, take);
         }
