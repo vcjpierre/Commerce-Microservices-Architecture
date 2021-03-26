@@ -1,8 +1,9 @@
-﻿
-using Catalog.Service.EventHandlers.Commands;
+﻿using Catalog.Service.EventHandlers.Commands;
 using Catalog.Service.Queries;
 using Catalog.Service.Queries.DTOs;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Service.Common.Collection;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace Catalog.Api.Controllers
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     [Route("v1/products")]
     public class ProductController : ControllerBase
@@ -21,12 +23,14 @@ namespace Catalog.Api.Controllers
         private readonly ILogger<ProductController> _logger;
         private readonly IMediator _mediator;
 
-        public ProductController(ILogger<ProductController> logger, IProductQueryService productQueryService, IMediator mediator)
+        public ProductController(
+            ILogger<ProductController> logger,
+            IMediator mediator,
+            IProductQueryService productQueryService)
         {
             _logger = logger;
-            _productQueryService = productQueryService;
             _mediator = mediator;
-
+            _productQueryService = productQueryService;
         }
 
         [HttpGet]
@@ -40,7 +44,6 @@ namespace Catalog.Api.Controllers
             }
 
             return await _productQueryService.GetAllAsync(page, take, products);
-
         }
 
         [HttpGet("{id}")]
@@ -48,7 +51,6 @@ namespace Catalog.Api.Controllers
         {
             return await _productQueryService.GetAsync(id);
         }
-
 
         [HttpPost]
         public async Task<IActionResult> Create(ProductCreateCommand notification)
