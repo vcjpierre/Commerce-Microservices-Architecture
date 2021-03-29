@@ -9,7 +9,7 @@ namespace Catalog.Api.Controllers
         [HttpGet]
         public string Index()
         {
-            return "Running ..";
+            return "Running Identity Api...";
         }
     }
 }

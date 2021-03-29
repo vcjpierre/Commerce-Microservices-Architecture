@@ -9,7 +9,7 @@ namespace Order.Api.Controllers
         [HttpGet]
         public string Index()
         {
-            return "Running ..";
+            return "Running Order Api...";
         }
     }
 }

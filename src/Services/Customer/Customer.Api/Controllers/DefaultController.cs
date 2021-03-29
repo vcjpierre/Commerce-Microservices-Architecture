@@ -9,7 +9,7 @@ namespace Customer.Api.Controllers
         [HttpGet]
         public string Index()
         {
-            return "Running ..";
+            return "Running Customer Api...";
         }
     }
 }

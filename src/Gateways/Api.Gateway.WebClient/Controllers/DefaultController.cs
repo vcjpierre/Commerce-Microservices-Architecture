@@ -9,7 +9,7 @@ namespace Api.Gateway.WebClient.Controllers
         [HttpGet]
         public string Index()
         {
-            return "Running ..";
+            return "Running Api Gateway...";
         }
     }
 }
