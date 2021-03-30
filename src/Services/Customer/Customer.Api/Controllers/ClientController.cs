@@ -34,11 +34,11 @@ namespace Customer.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<DataCollection<ClientDto>> GetAll(int page = 1, int take = 10, string ids = null)
+        public async Task<DataCollection<ClientDto>> GetAll(int page = 1, int take = 10, string ids = null) 
         {
             IEnumerable<int> clients = null;
 
-            if (!string.IsNullOrEmpty(ids))
+            if (!string.IsNullOrEmpty(ids)) 
             {
                 clients = ids.Split(',').Select(x => Convert.ToInt32(x));
             }
