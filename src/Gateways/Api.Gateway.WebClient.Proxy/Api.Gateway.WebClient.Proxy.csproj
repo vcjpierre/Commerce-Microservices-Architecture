@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Api.Gateway.Proxies\Api.Gateway.Proxies.csproj" />
+    <ProjectReference Include="..\Api.Gateway.Models\Api.Gateway.Models.csproj" />
   </ItemGroup>
 
 </Project>
