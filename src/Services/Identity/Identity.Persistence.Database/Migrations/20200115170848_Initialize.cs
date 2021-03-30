@@ -175,7 +175,7 @@ namespace Identity.Persistence.Database.Migrations
                 schema: "Identity",
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "4f2a3111-1eae-4266-a048-62e1c245b647", "1ba3680b-4ea7-45b1-bb10-50e7c6b7ecf9", "Admin", "ADMIN" });
+                values: new object[] { "9ccd3258-edb2-4285-a384-b6786ef47d52", "3c0bad33-cdb1-4539-af8b-aeb6d694d7f1", "Admin", "ADMIN" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

@@ -16,7 +16,7 @@ namespace Identity.Persistence.Database.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasDefaultSchema("Identity")
-                .HasAnnotation("ProductVersion", "3.1.3")
+                .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -49,8 +49,8 @@ namespace Identity.Persistence.Database.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "4f2a3111-1eae-4266-a048-62e1c245b647",
-                            ConcurrencyStamp = "1ba3680b-4ea7-45b1-bb10-50e7c6b7ecf9",
+                            Id = "9ccd3258-edb2-4285-a384-b6786ef47d52",
+                            ConcurrencyStamp = "3c0bad33-cdb1-4539-af8b-aeb6d694d7f1",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
