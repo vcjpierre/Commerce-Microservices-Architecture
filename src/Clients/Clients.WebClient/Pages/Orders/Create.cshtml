@@ -2,7 +2,7 @@
 @model Clients.WebClient.Pages.Orders.CreateModel
 
 @{
-    ViewData["Title"] = "Nueva orden";
+    ViewData["Title"] = "New order";
 }
 
 <h1 class="display-4">@ViewData["Title"]</h1>
@@ -99,9 +99,10 @@
             el: "#app",
             data: {
                 paymentTypes: [
-                    { value: 0, label: "Tarjeta de crédito" },
+                    {
+                        value: 0, label: "Credit card" },
                     { value: 1, label: "PayPal" },
-                    { value: 2, label: "Trasnferencia bancaria" }
+                    { value: 2, label: "Bank transfer" }
                 ],
                 clients: @Html.Raw(JsonSerializer.Serialize(Model.Clients.Items)),
                 products: @Html.Raw(JsonSerializer.Serialize(Model.Products.Items)),
