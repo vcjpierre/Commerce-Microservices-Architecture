@@ -34,7 +34,7 @@ namespace Order.Service.EventHandlers
             _logger.LogInformation("--- New order creation started");
             var entry = new Domain.Order();
 
-            using (var trx = await _context.Database.BeginTransactionAsync())
+            using (var trx = await _context.Database.BeginTransactionAsync()) 
             {
                 // 01. Prepare detail
                 _logger.LogInformation("--- Preparing detail");
@@ -53,32 +53,23 @@ namespace Order.Service.EventHandlers
 
                 // 04. Update Stocks
                 _logger.LogInformation("--- Updating stock");
-
-                try
+                await _catalogProxy.UpdateStockAsync(new ProductInStockUpdateStockCommand
                 {
-                    await _catalogProxy.UpdateStockAsync(new ProductInStockUpdateStockCommand
+                    Items = notification.Items.Select(x => new ProductInStockUpdateItem
                     {
-                        Items = notification.Items.Select(x => new ProductInStockUpdateItem
-                        {
-                            ProductId = x.ProductId,
-                            Stock = x.Quantity,
-                            Action = ProductInStockAction.Substract
-                        })
-                    });
-                }
-                catch
-                {
-                    _logger.LogError("The order could not be created due to out of stock");
-                    throw new Exception();
-                }
-                
+                        ProductId = x.ProductId,
+                        Stock = x.Quantity,
+                        Action = ProductInStockAction.Substract
+                    })
+                });
+
                 await trx.CommitAsync();
             }
 
             _logger.LogInformation("--- New order creation ended");
         }
 
-        private void PrepareDetail(Domain.Order entry, OrderCreateCommand notification)
+        private void PrepareDetail(Domain.Order entry, OrderCreateCommand notification) 
         {
             entry.Items = notification.Items.Select(x => new OrderDetail
             {
