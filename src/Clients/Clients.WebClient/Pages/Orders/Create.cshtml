@@ -6,19 +6,27 @@
 }
 
 <h1 class="display-4">@ViewData["Title"]</h1>
-<p>Creación de una nueva orden de compra</p>
+<p>
+    Create a new purchase order
+</p>
 
 <div id="app">
     <div v-if="isLoading" class="text-center mt-5 mb-5 display-4">
-        <div v-if="!hasError">.. procesando la orden ..</div>
-        <div v-else>.. no se pudo crear la orden ..</div>
+        <div v-if="!hasError">
+            .. processing the order ..
+        </div>
+        <div v-else>
+            .. the order could not be created ..
+        </div>
     </div>
 
     <template v-else>
         <div class="form-group">
             <label>Método de pago</label>
             <select v-model.number="model.paymentType" class="form-control">
-                <option :value="null" selected disabled>Seleccione un método de pago</option>
+                <option :value="null" selected disabled>
+                    Select a payment method
+                </option>
                 <option v-for="item in paymentTypes" :value="item.value">{{item.label}}</option>
             </select>
         </div>
@@ -26,7 +34,9 @@
         <div class="form-group">
             <label>Cliente</label>
             <select v-model.number="model.clientId" class="form-control">
-                <option :value="null" selected disabled>Seleccione un cliente</option>
+                <option :value="null" selected disabled>
+                Select a client
+                </option>
                 <option v-for="item in clients" :value="item.ClientId">{{item.Name}}</option>
             </select>
         </div>
@@ -35,11 +45,13 @@
             <label>Producto</label>
             <div class="input-group mb-3">
                 <select v-model.number="selectProduct" class="form-control">
-                    <option :value="null" selected disabled>Seleccione un producto</option>
+                    <option :value="null" selected disabled>
+                        Select a product
+                    </option>
                     <option v-for="item in products" :value="item.ProductId">{{item.Name}}</option>
                 </select>
                 <div class="input-group-prepend">
-                    <button v-on:click="addItem" class="btn btn-outline-secondary" type="button">Agregar</button>
+                    <button v-on:click="addItem" class="btn btn-outline-secondary" type="button">Add</button>
                 </div>
             </div>
         </div>
@@ -49,15 +61,15 @@
                 <tr>
                     <th style="width:30px;"></th>
                     <th>Item</th>
-                    <th style="width:120px;" class="text-right">Precio</th>
-                    <th style="width:120px;" class="text-right">Cantidad</th>
+                    <th style="width:120px;" class="text-right">Price</th>
+                    <th style="width:120px;" class="text-right">Quantity</th>
                     <th style="width:150px;" class="text-right">Total</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="item in model.items">
                     <td>
-                        <a v-on:click="removeItem(item.productId)" class="text-danger">Retirar</a>
+                        <a v-on:click="removeItem(item.productId)" class="text-danger">Remove</a>
                     </td>
                     <td>{{item.name}}</td>
                     <td class="text-right">{{item.price|currency}}</td>
@@ -75,7 +87,7 @@
             </tfoot>
         </table>
         <div v-if="model.items.length > 0 && model.paymentType !== null && model.clientId !== null" class="text-center">
-            <button v-on:click="save" type="button" class="btn btn-primary btn-block text-light btn-lg">Crear orden</button>
+            <button v-on:click="save" type="button" class="btn btn-primary btn-block text-light btn-lg">Create order</button>
         </div>
     </template>
 </div>
