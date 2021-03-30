@@ -102,7 +102,7 @@ namespace Identity.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
+            else 
             {
                 loggerFactory.AddSyslog(
                     Configuration.GetValue<string>("Papertrail:host"),
