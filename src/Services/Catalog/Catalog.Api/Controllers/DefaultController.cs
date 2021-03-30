@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Identity.Api.Controllers
+namespace Catalog.Api.Controllers
 {
     [ApiController]
     [Route("/")]
@@ -10,7 +10,7 @@ namespace Identity.Api.Controllers
         [HttpGet]
         public string Index()
         {
-            return "Running ..";
+            return "Running Catalog Api...";
         }
     }
 }
